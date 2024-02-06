@@ -55,6 +55,8 @@ public class Intake extends CommandBase {
       colorString = "Blue";
     } else if (match.color == kRedTarget) {
       colorString = "Red";
+      intake1.set(0);
+      intake2.set(0);
     } else if (match.color == kGreenTarget) {
       colorString = "Green";
     } else if (match.color == kYellowTarget) {
