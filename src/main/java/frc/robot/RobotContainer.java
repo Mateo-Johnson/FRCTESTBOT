@@ -5,14 +5,11 @@
 package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
-import frc.robot.commands.Autos;
-import frc.robot.commands.silly;
+import frc.robot.commands.Outtake;
 import frc.robot.commands.Intake;
 import frc.robot.subsystems.ExampleSubsystem;
-import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
-import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -51,7 +48,7 @@ public class RobotContainer {
     // cancelling on release.
     driverController.b().whileTrue(m_exampleSubsystem.exampleMethodCommand());
     driverController.leftBumper().whileTrue(new Intake());
-    driverController.rightBumper().whileTrue(new silly());
+    driverController.rightBumper().whileTrue(new Outtake());
   }
 
   /**

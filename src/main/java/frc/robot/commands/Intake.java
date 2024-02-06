@@ -24,8 +24,8 @@ public class Intake extends CommandBase {
     // Use addRequirements() here to declare subsystem dependencies.
   }
   //INTAKE
-  public static final CANSparkMax a2 = new CANSparkMax(12, MotorType.kBrushless);
-  public static final CANSparkMax c1= new CANSparkMax(13, MotorType.kBrushless);
+  public static final CANSparkMax intake1 = new CANSparkMax(12, MotorType.kBrushless);
+  public static final CANSparkMax intake2= new CANSparkMax(13, MotorType.kBrushless);
 
 
   // Called when the command is initially scheduled.
@@ -45,11 +45,11 @@ public class Intake extends CommandBase {
     colorMatcher.matchClosestColor(detectedColor);
 
     if (match.color != orange) {
-      c1.set(0.6);
-      a2.set(0.6);
+      intake1.set(0.6);
+      intake2.set(0.6);
     } else if (match.color == orange) {
-    c1.set(0);
-    a2.set(0);
+      intake1.set(0);
+      intake2.set(0);
     }
 
 
@@ -58,8 +58,8 @@ public class Intake extends CommandBase {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    c1.set(0);
-    a2.set(0);
+    intake1.set(0);
+    intake2.set(0);
 
   }
 
