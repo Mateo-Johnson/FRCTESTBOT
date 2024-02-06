@@ -54,40 +54,40 @@ public class Intake extends CommandBase {
     String colorString;
     ColorMatchResult match = colorMatcher.matchClosestColor(detectedColor);
 
-    if (match.color == BlueTarget) { //IF THE THING
-      colorString = "Blue";
+    if (match.color == BlueTarget) {
+      colorString = "blue";
       ringInIntake(false); //FLAG TO MARK WHEN THERE ISN'T A RING IN INTAKE
 
     } else if (match.color == RedTarget) {
-      colorString = "Red";
+      colorString = "red";
       stopIntake();
       ringInIntake(true); //FLAG TO MARK WHEN THERE IS A RING IN INTAKE - 
 
     } else if (match.color == GreenTarget) {
-      colorString = "Green";
+      colorString = "green";
       ringInIntake(false); //FLAG TO MARK WHEN THERE ISN'T A RING IN INTAKE
 
     } else if (match.color == YellowTarget) {
-      colorString = "Yellow";
+      colorString = "yellow";
       runIntake(0.6);
       ringInIntake(false); //FLAG TO MARK WHEN THERE ISN'T A RING IN INTAKE 
 
     } else if (match.color == OrangeTarget){
-      colorString = "Orange";
+      colorString = "orange";
       stopIntake();
       ringInIntake(true); //FLAG TO MARK WHEN THERE IS A RING IN INTAKE - 
 
     } else {
-      colorString = "Unknown";
+      colorString = "we can't tell";
       runIntake(0.6);
       ringInIntake(false); //FLAG TO MARK WHEN THERE ISN'T A RING IN INTAKE
     }
 
-    SmartDashboard.putNumber("Red", detectedColor.red);
-    SmartDashboard.putNumber("Green", detectedColor.green);
-    SmartDashboard.putNumber("Blue", detectedColor.blue);
-    SmartDashboard.putNumber("Confidence", match.confidence);
-    SmartDashboard.putString("Detected Color", colorString);
+    SmartDashboard.putNumber("red value", detectedColor.red);
+    SmartDashboard.putNumber("green value", detectedColor.green);
+    SmartDashboard.putNumber("blue value", detectedColor.blue);
+    SmartDashboard.putNumber("confidence", match.confidence);
+    SmartDashboard.putString("detected color", colorString);
 
   }
 
